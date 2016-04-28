@@ -177,4 +177,10 @@ object PolymorphicFunctions {
 
   def compose[A,B,C](f: B => C, g: A => B): A => C =
     a => f(g(a))
+
+  def main(args: Array[String]): Unit = {
+    def gt(a: Int, b: Int) = a > b
+    println(PolymorphicFunctions.isSorted(Array(0, 1, 2, 3, 55, 90), gt))
+    println(PolymorphicFunctions.isSorted(Array(0, 100, 2, 3, 55, 90), gt))
+  }
 }
